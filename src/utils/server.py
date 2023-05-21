@@ -1,7 +1,6 @@
 import os
 from flask import Flask, render_template
 
-
 def start_server(path: str, port: int) -> bool:
     try:
         app = Flask(__name__)
