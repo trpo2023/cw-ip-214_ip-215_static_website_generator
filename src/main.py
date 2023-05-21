@@ -25,4 +25,4 @@ if(args.command == 'page'):
         # TODO HANDLE DELETE
         print('delete')
 else:
-    start_server(path=path, port=port)
+    start_server(path=os.path.abspath(path), port=port)
