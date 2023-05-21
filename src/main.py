@@ -20,8 +20,8 @@ if (args.command == 'page'):
 
     if (args.subcommand == 'create'):
         template_path = False
-        if(args.template_path):
-            template_path = os.path.abspath(args.template_path )
+        if (args.template_path):
+            template_path = os.path.abspath(args.template_path)
         static_folder_path = os.path.abspath(args.path)
 
         create_file(static_folder_path, name, template_path)

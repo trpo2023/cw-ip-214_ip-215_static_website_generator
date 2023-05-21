@@ -11,12 +11,15 @@ def parse_args():
     create_parser = page_subparsers.add_parser('create')
     create_parser.add_argument('--name', dest='page_name', required=True,
                                help='имя создаваемой страницы [обязательный]')
-    create_parser.add_argument('--template-path', dest='template_path', required=False,
-                               help='путь к шаблону страницы [обязательный]')
+    create_parser.add_argument(
+        '--template-path',
+        dest='template_path',
+        required=False,
+        help='путь к шаблону страницы [обязательный]')
 
     delete_parser = page_subparsers.add_parser('delete')
     delete_parser.add_argument('--name', dest='page_name', required=True,
-                                help='путь к удаляемому файлу')
+                               help='путь к удаляемому файлу')
 
     parser.add_argument('--path', dest='path', required=True,
                         help='путь к статичной директории [обязательный]')
