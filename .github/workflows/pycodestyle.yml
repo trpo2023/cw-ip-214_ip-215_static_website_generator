@@ -1,0 +1,26 @@
+name: Pycodestyle
+
+on:
+  push:
+
+jobs:
+  pycodestyle:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install pycodestyle
+
+      - name: Run pycodestyle
+        run: pycodestyle .
+
+      - name: Run tests
+        run: python3 -m unittest -v  
