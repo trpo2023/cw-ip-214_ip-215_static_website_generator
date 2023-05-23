@@ -1,7 +1,7 @@
 import argparse
 
 
-def parse_args():
+def parse_args(args=None):
     parser = argparse.ArgumentParser(description='Static website generator')
     subparsers = parser.add_subparsers(dest='command')
 
@@ -26,5 +26,8 @@ def parse_args():
     parser.add_argument('--port', dest='port', default=3000, type=int,
                         help='порт на котором будет создан сервер')
 
-    args = parser.parse_args()
+    if (args):
+        args = parser.parse_args(args)
+    else:
+        args = parser.parse_args()
     return args
